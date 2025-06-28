@@ -13,13 +13,11 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class AirComposition {
-    private List<String> payload1;
-    private List<String> payload2;
-    private List<String> payload3;
+public class HistoryData {
+    Double temperature;
+    Double humidity;
+    Double combustibleGas;
 
-    private List<LocalDateTime> time1;
-    private List<LocalDateTime> time2;
-    private List<LocalDateTime> time3;
+    LocalDateTime recordTime;
 }
 

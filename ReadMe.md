@@ -13,11 +13,11 @@ http://localhost:8080/mqtt/send?topic=7data&msg=31;12;31
     body:
         ```
         {
-        "username": "string",
-        "email": "string",
-        "password": "string"
-        "role": "string",
-        "code": "string"        
+            "username": "string",
+            "email": "string",
+            "password": "string"
+            "role": "string",
+            "code": "string"        
         }```
 **返回参数**:
 
@@ -39,8 +39,8 @@ http://localhost:8080/mqtt/send?topic=7data&msg=31;12;31
     body:
         ```
         {
-        "email": "string",
-        "password": "string"
+            "email": "string",
+            "password": "string"
         }```
 **返回参数**:
 
@@ -62,15 +62,15 @@ http://localhost:8080/mqtt/send?topic=7data&msg=31;12;31
     body:
         ```
         {
-        "oldPassword": "string",
-        "newPassword": "string"
+            "oldPassword": "string",
+            "newPassword": "string"
         }```
 **返回参数**:
         
         {
-        "code" : number,
-        "msg" : "string",
-        "data" : "string"
+            "code" : number,
+            "msg" : "string",
+            "data" : "string"
         }
 
 ## 4. 发送验证码
@@ -80,7 +80,29 @@ http://localhost:8080/mqtt/send?topic=7data&msg=31;12;31
 **返回参数**: 
 
         {
-        "code" : number,
-        "msg" : "string",
-        "data" : null
+            "code" : number,
+            "msg" : "string",
+            "data" : null
         }
+
+## 5. 前端获取开发板记录数据
+**接口地址**: `/board/getData`
+**请求方式**: `GET`
+**请求参数**: 无
+**返回参数**:
+
+    {
+        "code" : 1,
+        "msg" : "success",
+        "data" : [ {
+        "temperature" : 31.0,
+        "humidity" : 12.0,
+        "combustibleGas" : 31.0,
+        "recordTime" : "2025-06-28T12:42:01"
+        }, {
+        "temperature" : 71.0,
+        "humidity" : 99.0,
+        "combustibleGas" : 12.0,
+        "recordTime" : "2025-06-28T14:13:56"
+        } ]
+    }
