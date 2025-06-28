@@ -23,4 +23,11 @@ public class HistoryDataController {
         List<HistoryData> data = historyDataService.getHistoryData();
         return Result.success(data);
     }
+
+    // 获取最新数据
+    @GetMapping("/getLatestData")
+    public Result GetNewDataController() {
+        HistoryData data = historyDataService.getNewData();
+        return Result.success(data);
+    }
 }

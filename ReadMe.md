@@ -108,3 +108,19 @@ http://localhost:8080/mqtt/send?topic=7data&msg=31;12;31
         "recordTime" : "2025-06-28T14:13:56"
         } ]
     }
+## 6. 获取最新数据
+**接口地址**: `/getLatestData`
+**请求方式**: `GET`
+**请求参数**: 无
+**返回参数**:
+
+    {
+        "code" : 1,
+        "msg" : "success",
+        "data" : {
+        "temperature" : 31.0,
+        "humidity" : 12.0,
+        "combustibleGas" : 90.0,
+        "recordTime" : "2025-06-28T15:17:33"
+        }
+    }
