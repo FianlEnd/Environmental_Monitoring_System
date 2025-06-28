@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface HistoryDataService {
       List<HistoryData> getHistoryData();
+      HistoryData getNewData();
 }

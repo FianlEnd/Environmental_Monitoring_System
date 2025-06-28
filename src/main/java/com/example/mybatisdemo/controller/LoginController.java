@@ -45,7 +45,7 @@ public class LoginController {
      */
     @GetMapping("/register/sendEmail")
     public Result sendEmail(@RequestParam String email) {
-        userService.sendEmail(email);
+        userService.sendEmail(email,"prove");
         return Result.success();
     }
 

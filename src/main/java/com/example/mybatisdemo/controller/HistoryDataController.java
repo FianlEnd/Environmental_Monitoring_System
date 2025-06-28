@@ -17,6 +17,7 @@ import java.util.Map;
 public class HistoryDataController {
     @Autowired
     private HistoryDataService historyDataService;
+
     @GetMapping("/historyData")
     public Result GetHistoryDataController() {
         List<HistoryData> data = historyDataService.getHistoryData();

@@ -17,4 +17,9 @@ public class HistoryDataServiceImpl implements HistoryDataService {
     public List<HistoryData> getHistoryData() {
         return historyDataMapper.getAllHistoryData();
     }
+
+    @Override
+    public HistoryData getNewData() {
+        return historyDataMapper.getNewData();
+    }
 }

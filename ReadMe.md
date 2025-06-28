@@ -6,6 +6,8 @@
 http://localhost:8080/mqtt/send?topic=7data&msg=31;12;31
 ```
 ***
+自动报警功能：当最新的可燃气体数据超过150时，向所有CITY_MANAGER用户发送警报邮件
+***
 ## 1. 注册账号
 **接口地址**: `/register`
 **请求方式**: `POST`

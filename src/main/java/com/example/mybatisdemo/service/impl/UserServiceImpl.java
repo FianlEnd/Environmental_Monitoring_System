@@ -186,25 +186,35 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User> implements Us
     private EmailApi emailApi;
 
     @Override
-    public Result sendEmail(String email) {
-        Validation v = baseMapper.selectByEmailVali(email);
-        LocalDateTime now = LocalDateTime.now();
-        if(v!=null){
-            // 验证码未过期，不能重新发送
-            if (now.isBefore(v.getTime())) {
-                return Result.error("验证码尚未过期，请勿重复发送");
-            } else {
-                // 验证码已过期，删除旧记录
-                baseMapper.deleteByIdVali(v.getId());
+    public Result sendEmail(String email,String  content) {
+        if("prove".equals( content))
+        {
+            Validation v = baseMapper.selectByEmailVali(email);
+            LocalDateTime now = LocalDateTime.now();
+            if(v!=null){
+                // 验证码未过期，不能重新发送
+                if (now.isBefore(v.getTime())) {
+                    return Result.error("验证码尚未过期，请勿重复发送");
+                } else {
+                    // 验证码已过期，删除旧记录
+                    baseMapper.deleteByIdVali(v.getId());
+                }
+            }
+            String code = RandomUtil.randomNumbers(4);
+            System.out.println("发送验证码");
+            boolean send = emailApi.sendGeneralEmail("验证码", "您的验证码为：" + code, email);
+            if (!send) {
+                return Result.error("发送验证码失败");
+            }
+            baseMapper.insertVali(new Validation(null, email, code, now.plusMinutes(10)));
+        }
+        else
+        {
+            boolean send = emailApi.sendGeneralEmail("可燃气体警告", content, email);
+            if (!send) {
+                return Result.error("发送验证码失败");
             }
         }
-        String code = RandomUtil.randomNumbers(4);
-        System.out.println("发送验证码");
-        boolean send = emailApi.sendGeneralEmail("验证码", "您的验证码为：" + code, email);
-        if (!send) {
-            return Result.error("发送验证码失败");
-        }
-        baseMapper.insertVali(new Validation(null, email, code, now.plusMinutes(10)));
         return Result.success();
     }
 } 

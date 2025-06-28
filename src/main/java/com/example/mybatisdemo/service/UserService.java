@@ -21,5 +21,5 @@ public interface UserService extends IService<User> {
 
     Result changePassword(LoginChangePassward logi);
 
-    Result sendEmail(String email);
+    Result sendEmail(String email, String content);
 }

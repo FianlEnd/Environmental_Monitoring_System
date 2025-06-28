@@ -3,9 +3,11 @@
   <component name="CoolRequestSetting">
     <option name="serializePaths">
       <list>
-        <option value="C:\Users\YC\.config\.cool-request\request\serialize\f64cd5ca1dfe455b985e74c2c477a1ee" />
-        <option value="C:\Users\YC\.config\.cool-request\request\serialize\4cc5b3e8dab8485d9eca2aafd7926adc" />
         <option value="C:\Users\YC\.config\.cool-request\request\serialize\863ad07ec70840dc839afd3fe43ada25" />
+        <option value="C:\Users\YC\.config\.cool-request\request\serialize\c886fc60b070489fab5b281649a4eb37" />
+        <option value="C:\Users\YC\.config\.cool-request\request\serialize\655bb3cebf0a41bf9f690b43bd6604c7" />
+        <option value="C:\Users\YC\.config\.cool-request\request\serialize\6fd31a6578884e42818e9df1049fcdaf" />
+        <option value="C:\Users\YC\.config\.cool-request\request\serialize\78905cae975742d5a81696a9cc53e46d" />
       </list>
     </option>
     <option name="projectCachePath" value="project-3d823dc6-0790-432e-814a-6c12eb1049aa" />

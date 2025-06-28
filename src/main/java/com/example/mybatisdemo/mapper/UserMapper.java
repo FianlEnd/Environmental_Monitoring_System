@@ -35,6 +35,13 @@ public interface UserMapper extends BaseMapper<User> {
     User selectByEmail(@Param("email") String email);
 
     /**
+     * 查询所有城市管理员的邮箱
+     */
+    @Select("SELECT email FROM users WHERE role = 'CITY_MANAGER'")
+    List<String> getAllCityManagerEmails();
+
+
+    /**
      * 根据邮箱查询用户
      */
     @Select("SELECT * FROM validation WHERE email = #{email}")
