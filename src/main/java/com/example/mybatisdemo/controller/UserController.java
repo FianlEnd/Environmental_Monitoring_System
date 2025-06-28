@@ -4,11 +4,13 @@ import com.example.mybatisdemo.entity.LoginChangePassward;
 import com.example.mybatisdemo.entity.Result;
 import com.example.mybatisdemo.entity.User;
 import com.example.mybatisdemo.service.UserService;
+import org.springframework.ai.chat.messages.UserMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.stereotype.Service;
 import java.time.LocalDate;
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +22,7 @@ import java.util.Map;
  */
 @RestController
 @RequestMapping("/user")
-//@CrossOrigin(origins = "*")
+@CrossOrigin(origins = "*")
 public class UserController {
 
     @Autowired
@@ -34,4 +36,15 @@ public class UserController {
         return userService.changePassword(loi);
     }
 
+//    @Autowired
+//    private ChatClient chatClient; // 注入 ChatClient
+//
+//    @GetMapping("/getAiResponse")
+//    public Result getAiResponse(@RequestParam String question) {
+//        String response = chatClient.prompt()
+//                .user(question)
+//                .call()
+//                .content();
+//        return Result.success(response);
+//    }
 } 

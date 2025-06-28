@@ -26,6 +26,7 @@ F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\service\impl\
 F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\utils\JwtUtils.java
 F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\config\MqttConfiguration.java
 F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\service\MqttMessageSender.java
+F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\task\WarningTask.java
 F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\exception\GlobalExceptionHandler.java
 F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\service\impl\UserServiceImpl.java
 F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\gateway\MqttGateway.java

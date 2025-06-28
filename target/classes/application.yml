@@ -8,6 +8,13 @@ spring:
   application:
     name: mybatis-demo
 
+  ai:
+    openai:
+      base-url: https://dashscope.aliyuncs.com/compatible-mode  # 通义千问
+      api-key: sk-5d371a55ec5b486f919b6774ffda0676
+      chat.options:
+        model: qwen-plus
+
   mqtt:
     username: dowithout
     password: dowithout

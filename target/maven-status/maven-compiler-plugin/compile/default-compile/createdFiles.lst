@@ -15,6 +15,7 @@ com\example\mybatisdemo\exception\GlobalExceptionHandler.class
 com\example\mybatisdemo\utils\JwtUtils.class
 com\example\mybatisdemo\entity\LoginInfo.class
 com\example\mybatisdemo\service\HardwareService.class
+com\example\mybatisdemo\task\WarningTask.class
 com\example\mybatisdemo\gateway\MqttGateway.class
 com\example\mybatisdemo\domain\TbLampStatus.class
 com\example\mybatisdemo\domain\MqttConfigurationProperties.class

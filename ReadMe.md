@@ -124,3 +124,81 @@ http://localhost:8080/mqtt/send?topic=7data&msg=31;12;31
         "recordTime" : "2025-06-28T15:17:33"
         }
     }
+## 7.ai问答
+**接口地址**: `/chat`
+**请求方式**: `GET`
+**请求参数**: ?message=你是谁
+**返回参数**:
+
+    {
+        "result" : {
+        "metadata" : {
+        "finishReason" : "STOP",
+        "contentFilters" : [ ],
+        "empty" : true
+        },
+        "output" : {
+        "messageType" : "ASSISTANT",
+        "metadata" : {
+        "refusal" : "",
+        "finishReason" : "STOP",
+        "index" : 0,
+        "id" : "chatcmpl-63d34d7f-5f37-9f79-8672-eb1ef317226b",
+        "role" : "ASSISTANT",
+        "messageType" : "ASSISTANT"
+        },
+        "toolCalls" : [ ],
+        "media" : [ ],
+        "text" : "我是通义千问，由通义实验室研发的超大规模语言模型。我可以帮助你回答问题、提供信息、进行创作等。如果你有任何问题或需要帮助，欢迎随时告诉我！"
+        }
+        },
+        "metadata" : {
+        "id" : "chatcmpl-63d34d7f-5f37-9f79-8672-eb1ef317226b",
+        "model" : "qwen-plus",
+        "rateLimit" : {
+        "requestsLimit" : null,
+        "requestsRemaining" : null,
+        "tokensLimit" : null,
+        "tokensRemaining" : null,
+        "requestsReset" : null,
+        "tokensReset" : null
+        },
+        "usage" : {
+        "promptTokens" : 1045,
+        "completionTokens" : 41,
+        "totalTokens" : 1086,
+        "generationTokens" : 41,
+        "nativeUsage" : {
+        "completion_tokens" : 41,
+        "prompt_tokens" : 1045,
+        "total_tokens" : 1086,
+        "prompt_tokens_details" : {
+        "cached_tokens" : 0
+        }
+        }
+        },
+        "promptMetadata" : [ ],
+        "empty" : false
+        },
+        "results" : [ {
+        "metadata" : {
+        "finishReason" : "STOP",
+        "contentFilters" : [ ],
+        "empty" : true
+        },
+        "output" : {
+        "messageType" : "ASSISTANT",
+        "metadata" : {
+        "refusal" : "",
+        "finishReason" : "STOP",
+        "index" : 0,
+        "id" : "chatcmpl-63d34d7f-5f37-9f79-8672-eb1ef317226b",
+        "role" : "ASSISTANT",
+        "messageType" : "ASSISTANT"
+        },
+        "toolCalls" : [ ],
+        "media" : [ ],
+        "text" : "我是通义千问，由通义实验室研发的超大规模语言模型。我可以帮助你回答问题、提供信息、进行创作等。如果你有任何问题或需要帮助，欢迎随时告诉我！"
+        }
+        } ]
+    }
