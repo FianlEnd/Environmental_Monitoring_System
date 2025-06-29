@@ -131,6 +131,9 @@ http://localhost:8080/mqtt/send?topic=7data&msg=31;12;31
 **返回参数**:
 
     {
+        "code" : 1,
+        "msg" : "success",
+        "data" : {
         "result" : {
         "metadata" : {
         "finishReason" : "STOP",
@@ -143,17 +146,17 @@ http://localhost:8080/mqtt/send?topic=7data&msg=31;12;31
         "refusal" : "",
         "finishReason" : "STOP",
         "index" : 0,
-        "id" : "chatcmpl-63d34d7f-5f37-9f79-8672-eb1ef317226b",
+        "id" : "chatcmpl-6b89983e-f481-9c00-8629-c3d51ba0b98b",
         "role" : "ASSISTANT",
         "messageType" : "ASSISTANT"
         },
         "toolCalls" : [ ],
         "media" : [ ],
-        "text" : "我是通义千问，由通义实验室研发的超大规模语言模型。我可以帮助你回答问题、提供信息、进行创作等。如果你有任何问题或需要帮助，欢迎随时告诉我！"
+        "text" : "我是你的环境监测助手，具备环境科学、安全监测及相关数据分析的专业知识背景。我可以协助你解读温度、湿度及可燃气体浓度等环境参数，分析潜在风险，并提供相应的应对建议。如果你有任何相关数据或问题需要分析，请随时告诉我！"
         }
         },
         "metadata" : {
-        "id" : "chatcmpl-63d34d7f-5f37-9f79-8672-eb1ef317226b",
+        "id" : "chatcmpl-6b89983e-f481-9c00-8629-c3d51ba0b98b",
         "model" : "qwen-plus",
         "rateLimit" : {
         "requestsLimit" : null,
@@ -164,14 +167,14 @@ http://localhost:8080/mqtt/send?topic=7data&msg=31;12;31
         "tokensReset" : null
         },
         "usage" : {
-        "promptTokens" : 1045,
-        "completionTokens" : 41,
-        "totalTokens" : 1086,
-        "generationTokens" : 41,
+        "promptTokens" : 216,
+        "completionTokens" : 55,
+        "totalTokens" : 271,
+        "generationTokens" : 55,
         "nativeUsage" : {
-        "completion_tokens" : 41,
-        "prompt_tokens" : 1045,
-        "total_tokens" : 1086,
+        "completion_tokens" : 55,
+        "prompt_tokens" : 216,
+        "total_tokens" : 271,
         "prompt_tokens_details" : {
         "cached_tokens" : 0
         }
@@ -192,13 +195,38 @@ http://localhost:8080/mqtt/send?topic=7data&msg=31;12;31
         "refusal" : "",
         "finishReason" : "STOP",
         "index" : 0,
-        "id" : "chatcmpl-63d34d7f-5f37-9f79-8672-eb1ef317226b",
+        "id" : "chatcmpl-6b89983e-f481-9c00-8629-c3d51ba0b98b",
         "role" : "ASSISTANT",
         "messageType" : "ASSISTANT"
         },
         "toolCalls" : [ ],
         "media" : [ ],
-        "text" : "我是通义千问，由通义实验室研发的超大规模语言模型。我可以帮助你回答问题、提供信息、进行创作等。如果你有任何问题或需要帮助，欢迎随时告诉我！"
+        "text" : "我是你的环境监测助手，具备环境科学、安全监测及相关数据分析的专业知识背景。我可以协助你解读温度、湿度及可燃气体浓度等环境参数，分析潜在风险，并提供相应的应对建议。如果你有任何相关数据或问题需要分析，请随时告诉我！"
         }
         } ]
+        }
+    }
+
+## 8. 获取可燃气体警告阈值
+**接口地址**: `/getThreshold`
+**请求方式**: `GET`
+**请求参数**: 无
+**返回参数**:
+
+    {
+    "code" : 1,
+    "msg" : "success",
+    "data" : 160.0
+    }
+
+## 9. 修改可燃气体警告阈值
+**接口地址**: `/setThreshold`
+**请求方式**: `Get`
+**请求参数**:?threshold=your_threshold
+**返回参数**:
+
+    {
+    "code" : 1,
+    "msg" : "success",
+    "data" : "阈值设置成功"
     }

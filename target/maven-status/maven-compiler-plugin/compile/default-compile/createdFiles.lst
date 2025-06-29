@@ -13,6 +13,7 @@ com\example\mybatisdemo\entity\HistoryData.class
 com\example\mybatisdemo\entity\LoginChangePassward.class
 com\example\mybatisdemo\exception\GlobalExceptionHandler.class
 com\example\mybatisdemo\utils\JwtUtils.class
+com\example\mybatisdemo\controller\AiController.class
 com\example\mybatisdemo\entity\LoginInfo.class
 com\example\mybatisdemo\service\HardwareService.class
 com\example\mybatisdemo\task\WarningTask.class

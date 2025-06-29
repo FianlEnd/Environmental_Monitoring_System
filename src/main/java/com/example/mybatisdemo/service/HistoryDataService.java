@@ -6,6 +6,12 @@ import com.example.mybatisdemo.entity.Result;
 import java.util.List;
 
 public interface HistoryDataService {
-      List<HistoryData> getHistoryData();
-      HistoryData getNewData();
+
+    Double selectThreshold();
+
+    int setThreshold(Double threshold);
+
+    List<HistoryData> getHistoryData();
+
+    HistoryData getNewData();
 }

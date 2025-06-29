@@ -3,6 +3,7 @@ package com.example.mybatisdemo.task;
 import com.example.mybatisdemo.entity.HistoryData;
 import com.example.mybatisdemo.mapper.HistoryDataMapper;
 import com.example.mybatisdemo.mapper.UserMapper;
+import com.example.mybatisdemo.service.HistoryDataService;
 import com.example.mybatisdemo.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,17 +22,22 @@ public class WarningTask {
     @Autowired
     private HistoryDataMapper historyDataMapper;
 
-    // 直接定义阈值
-    private static final double COMBUSTIBLE_GAS_THRESHOLD = 150.0;
+    @Autowired
+    private HistoryDataService historyDataService;
+
+
+//    // 直接定义阈值
+//    private static final double COMBUSTIBLE_GAS_THRESHOLD = 150.0;
     @Autowired
     private UserMapper userMapper;
 
-    @Scheduled(cron = "*/10 * * * * ?")
+    @Scheduled(cron = "*/15 * * * * ?")
     public void checkData() {
+        Double  threshold= historyDataService.selectThreshold();
         log.info("定时任务开始执行...");
 
         HistoryData latestData = historyDataMapper.getNewData();
-        if (latestData != null && latestData.getCombustibleGas() > COMBUSTIBLE_GAS_THRESHOLD) {
+        if (latestData != null && latestData.getCombustibleGas() > threshold) {
             log.warn("可燃性气体浓度超标: {}", latestData.getCombustibleGas());
             List<String> cityManagerEmails = userMapper.getAllCityManagerEmails();
 

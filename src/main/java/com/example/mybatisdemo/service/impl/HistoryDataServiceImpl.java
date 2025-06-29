@@ -13,6 +13,19 @@ import java.util.List;
 public class HistoryDataServiceImpl implements HistoryDataService {
     @Autowired
     private HistoryDataMapper historyDataMapper;
+
+    @Override
+    public Double selectThreshold() {
+        Double threshold = historyDataMapper.selectThreshold();
+        if(threshold == null){historyDataMapper.setThreshold(150.0);}
+        return historyDataMapper.selectThreshold();
+    }
+
+    @Override
+    public int setThreshold(Double threshold) {
+        return historyDataMapper.setThreshold(threshold);
+    }
+
     @Override
     public List<HistoryData> getHistoryData() {
         return historyDataMapper.getAllHistoryData();

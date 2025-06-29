@@ -27,3 +27,10 @@ CREATE TABLE data (
                       combustible_gas DOUBLE NOT NULL COMMENT '可燃气体值',
                       record_time DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '记录时间'
 );
+
+# 建立阈值表
+CREATE TABLE thresholdDto (
+                              id BIGINT PRIMARY KEY AUTO_INCREMENT,
+                              threshold DOUBLE NOT NULL,
+                              time DATETIME NOT NULL
+);

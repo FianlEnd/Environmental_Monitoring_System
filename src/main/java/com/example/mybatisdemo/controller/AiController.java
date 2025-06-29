@@ -1,6 +1,7 @@
 package com.example.mybatisdemo.controller;
 
 import com.example.mybatisdemo.entity.HistoryData;
+import com.example.mybatisdemo.entity.Result;
 import com.example.mybatisdemo.mapper.HistoryDataMapper;
 import jakarta.annotation.PostConstruct;
 import jakarta.annotation.Resource;
@@ -70,7 +71,7 @@ public class AiController {
      * @return 回答结果（回答全部生成后一次性返回）
      */
     @GetMapping("/chat")
-    public ChatResponse chat(String message) {
+    public Result chat(String message) {
         contextHistoryList.add(new UserMessage(message));
         Prompt prompt = new Prompt(contextHistoryList);
         ChatResponse chatResp = model.call(prompt);
@@ -79,7 +80,7 @@ public class AiController {
             contextHistoryList.add(result.getOutput());
         }
         System.out.println("成功调用ai");
-        return chatResp;
+        return Result.success(chatResp);
     }
 
     /**

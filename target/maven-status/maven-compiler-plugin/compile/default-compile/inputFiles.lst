@@ -12,6 +12,7 @@ F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\controller\La
 F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\mapper\UserMapper.java
 F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\entity\User.java
 F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\entity\HistoryData.java
+F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\controller\AiController.java
 F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\domain\MqttConfigurationProperties.java
 F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\config\MqttInboundConfiguration.java
 F:\mybatis-demo\mybatis-demo\src\main\java\com\example\mybatisdemo\service\HistoryDataService.java
