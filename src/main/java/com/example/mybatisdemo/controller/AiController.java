@@ -47,8 +47,8 @@ public class AiController {
         // 查询所有历史数据（按时间升序）
         List<HistoryData> allData = historyDataMapper.getAllHistoryData();
 
-        // 取最后最多20条
-        int startIndex = Math.max(0, allData.size() - 20);
+        // 取最后最多40条
+        int startIndex = Math.max(0, allData.size() - 40);
         List<HistoryData> latestData = allData.subList(startIndex, allData.size());
 
         // 转化为字符串并加入上下文
@@ -72,6 +72,20 @@ public class AiController {
      */
     @GetMapping("/chat")
     public Result chat(String message) {
+        contextHistoryList.add(new UserMessage(message));
+        Prompt prompt = new Prompt(contextHistoryList);
+        ChatResponse chatResp = model.call(prompt);
+        Generation result = chatResp.getResult();
+        if (Objects.nonNull(result) && Objects.nonNull(result.getOutput())) {
+            contextHistoryList.add(result.getOutput());
+        }
+        System.out.println("成功调用ai");
+        return Result.success(chatResp);
+    }
+
+    @GetMapping("/analysisChat")
+    public Result analysisChat() {
+        String message="给我你获得的数据的分析，只要分析数据，如果有需要提供可能的解决方案,把后面如需要进一步告知什么的话删掉";
         contextHistoryList.add(new UserMessage(message));
         Prompt prompt = new Prompt(contextHistoryList);
         ChatResponse chatResp = model.call(prompt);

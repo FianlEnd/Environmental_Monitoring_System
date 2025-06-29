@@ -21,6 +21,18 @@ public class TokenFilter implements Filter {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         HttpServletResponse response = (HttpServletResponse) servletResponse;
 
+        // 设置跨域相关响应头
+        response.setHeader("Access-Control-Allow-Origin", "*"); // 或指定具体域名
+        response.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+        response.setHeader("Access-Control-Allow-Headers", "Content-Type, token");
+        response.setHeader("Access-Control-Max-Age", "3600");
+
+        // 处理 OPTIONS 预检请求
+        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+            response.setStatus(HttpServletResponse.SC_OK);
+            return;
+        }
+
         //1. 获取到请求路径
         String requestURI = request.getRequestURI(); // /employee/login
 
