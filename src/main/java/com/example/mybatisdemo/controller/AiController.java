@@ -49,8 +49,11 @@ public class AiController {
     @GetMapping("/chat")
     public Result chat(@RequestParam("prompt") String prompt) {
         List<HistoryData> data = historyDataMapper.getAllHistoryData();
+        // 取前40条（即最新的40条）
+        int startIndex = Math.max(0, data.size() - 40);
+        List<HistoryData> latestData = data.subList(startIndex, data.size());
         // 构建包含数据库信息的提示词
-        String context = "这是近期40条的环境数据：\n" + data.toString() + "\n\n用户问：" + prompt;
+        String context = "这是近期40条的环境数据：\n" + latestData.toString() + "\n\n你是部署在环境数据监测平台的ai,回答问题使用纯文本，不要有特殊符号，最后不要加类似有什么再问我这种意思的话，下面是用户提问：" + prompt;
         String message= chatClient.prompt()
                 .user(context)
                 .call()
@@ -62,8 +65,11 @@ public class AiController {
     @GetMapping("/analysisChat")
     public Result analysisChat() {
         List<HistoryData> data = historyDataMapper.getAllHistoryData();
+        // 取前40条（即最新的40条）
+        int startIndex = Math.max(0, data.size() - 40);
+        List<HistoryData> latestData = data.subList(startIndex, data.size());
         // 构建包含数据库信息的提示词
-        String context = "这是近期50条的环境数据：\n" + data.toString() +"\n\n请分析这些数据,最后不要加类似有什么再问我这种意思的话";
+        String context = "这是近期40条的环境数据：\n" + latestData.toString() +"\n\n你是部署在环境数据监测平台的ai,回答问题使用纯文本，不要有特殊符号，请分析这些数据,最后不要加类似有什么再问我这种意思的话";
         String message= chatClient.prompt()
                 .user(context)
                 .call()
